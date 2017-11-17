@@ -110,7 +110,7 @@ def normalize(inputs,
                                                training=training,
                                                scope=scope,
                                                reuse=reuse,
-                                               fused=False)    
+                                               fused=False)
     elif type in ("ln",  "ins"):
         reduction_axis = -1 if type=="ln" else 1   
         with tf.variable_scope(scope, reuse=reuse):

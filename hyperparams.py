@@ -53,7 +53,7 @@ class Hyperparams:
     converter_channels = 256 # == v
 
     # data
-    data = 'LJSpeech-1.0'
+    data = '/home/jugs/jugs_mnt/LJSpeech/LJSpeech-1.0'
     max_duration = 10.0 # seconds
     Tx = 180 # characters. maximum length of text.
     Ty = int(get_Ty(max_duration, sr, hop_length, r)) # Maximum length of sound (frames)
