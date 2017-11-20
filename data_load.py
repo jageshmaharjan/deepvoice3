@@ -58,8 +58,8 @@ def load_test_data():
     texts = []
     for line in codecs.open('test_sents.txt', 'r', 'utf-8'):
         sent = text_normalize(line).strip() + "E" # text normalization, E: EOS
-        if len(sent) <= hp.T_x:
-            sent += "P"*(hp.T_x-len(sent))
+        if len(sent) <= hp.Tx:
+            sent += "P"*(hp.Tx-len(sent))
             texts.append([char2idx[char] for char in sent])
     texts = np.array(texts, np.int32)
     return texts

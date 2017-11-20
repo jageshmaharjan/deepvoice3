@@ -28,14 +28,16 @@ def synthesize():
     X = load_test_data()
 
     # Load graph
-    g = Graph(training=False); print("Graph loaded")
+    g = Graph(training=False);
+    print("Graph loaded")
 
     # Inference
     with g.graph.as_default():
         sv = tf.train.Supervisor()
         with sv.managed_session(config=tf.ConfigProto(allow_soft_placement=True)) as sess:
             # Restore parameters
-            sv.saver.restore(sess, tf.train.latest_checkpoint(hp.logdir)); print("Restored!")
+            sv.saver.restore(sess, tf.train.latest_checkpoint(hp.logdir));
+            print("Restored!")
              
             # Get model name
             mname = open(hp.logdir + '/checkpoint', 'r').read().split('"')[1]
@@ -77,5 +79,3 @@ def synthesize():
 if __name__ == '__main__':
     synthesize()
     print("Done")
-    
-    
